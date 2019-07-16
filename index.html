@@ -13,6 +13,7 @@
   <meta property="og:url" content="https://iceraids.info/index.html">
   <meta property="og:image" content="./img/we-the-people.jpg">
 
+  <link rel="manifest" href="/manifest.json">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -279,6 +280,17 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
   <script src="https://use.fontawesome.com/4f5c4226ac.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      // console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  }
+  </script>
 </body>
 
 </html>
